@@ -1,0 +1,34 @@
+﻿@model ASPDAY2.Models.Instructor
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        @Html.LabelFor(n => n.InsId)
+        @Html.TextBoxFor(n => n.InsId)
+        @Html.ValidationMessageFor(n => n.InsId, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(n => n.InsName)
+        @Html.TextBoxFor(n => n.InsName)
+        @Html.ValidationMessageFor(n => n.InsName, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(n => n.InsDegree)
+        @Html.TextBoxFor(n => n.InsDegree)
+        @Html.ValidationMessageFor(n => n.InsDegree, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(n => n.Salary)
+        @Html.TextBoxFor(n => n.Salary)
+        @Html.ValidationMessageFor(n => n.Salary, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(n => n.DeptId)
+        @Html.TextBoxFor(n => n.DeptId)
+        @Html.ValidationMessageFor(n => n.DeptId, "", new { @class = "text-danger" })
+    </div>
+    <input type="submit" class="btn btn-primary" value="Save" />
+</form>
+
+<script src="/lib/jquery/dist/jquery.min.js"></script>
+<script src="/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>

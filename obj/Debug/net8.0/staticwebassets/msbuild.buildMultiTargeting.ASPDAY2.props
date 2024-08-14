@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\ASPDAY2.props" />
+</Project>

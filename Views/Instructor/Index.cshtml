@@ -1,0 +1,73 @@
+﻿@model ICollection<ASPDAY2.Models.Instructor>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-M3PWQaY2QFIhwuzE7VW3K1dyA0C1coQemlJD1qDzWIxmg4zFMEu50eU/HiPzGmG4" crossorigin="anonymous">
+</head>
+
+<body>
+    <a asp-action="Save" class="btn btn-primary">Create New Instructor</a>
+
+
+    <div class="container">
+        <h1 class="text-center my-4">Instructor Data</h1>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        ID
+                    </th>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Degree
+                    </th>
+                    <th>
+                        Salary
+                    </th>
+                    <th>
+                        Dep_Id
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var Instructor in Model)
+                {
+                    <tr>
+                        <td>
+                            @Instructor.InsId
+                        </td>
+                        <td>
+                            @Instructor.InsName
+                        </td>
+                        <td>
+                            @Instructor.InsDegree
+                        </td>
+                        <td>
+                            @Instructor.Salary
+                        </td>
+                        <td>
+                            @Instructor.DeptId
+                        </td>
+                        <td>
+                            <a asp-controller="Instructor" asp-action="Details" asp-route-id="@Instructor.InsId" class="btn btn-warning">Details</a>
+
+
+                        </td>
+                        <td>
+                            <a asp-controller="Instructor" asp-action="Edit" asp-route-id="@Instructor.InsId" class="btn btn-warning">Edit</a>
+                        </td>
+                        <td>
+                            <a asp-controller="Instructor" asp-action="delete" asp-route-id="@Instructor.InsId" class="btn btn-warning">delete</a>
+                        </td>
+
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgvVh5lB7Cji8gk54A1hohzTYfJr8Hd50Tvf6Ezri0fxYSl0pGr" crossorigin="anonymous"></script>
+</body>

@@ -1,0 +1,20 @@
+﻿@model ASPDAY2.Models.Student
+@{
+    var student = Model;
+} 
+<h2>edit view</h2>
+<form asp-controller="student" asp-action="edit" method="post">
+    <input type="hidden" value="@student.StId" name="StId" />
+    first name: <input type="text" value="@student.StFname" name="StFname" />
+    last name: <input type="text" value="@student.StLname" name="StLname" />
+    address: <input type="text" value="@student.StAddress" name="StAddress" />
+    age: <input type="number" value="@student.StAge" name="StAge" />
+    <input type="submit" />
+</form>
+@* public string? StFname { get; set; }
+
+    public string? StLname { get; set; }
+
+    public string? StAddress { get; set; }
+
+    public int? StAge { get; set; } *@

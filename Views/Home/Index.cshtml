@@ -1,0 +1,10 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center mt-5">
+    <h1>Welcome to My MVC Project</h1>
+    <p>Your platform for managing instructors and students.</p>
+    <a href="@Url.Action("Index", "Instructor")" class="btn btn-primary">Manage Instructors</a>
+    <a href="@Url.Action("Index", "Student")" class="btn btn-secondary">Manage Students</a>
+</div>

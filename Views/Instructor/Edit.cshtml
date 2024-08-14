@@ -1,0 +1,89 @@
+﻿@model ASPDAY2.Models.Instructor
+
+@{
+    var instructor = Model;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Instructor</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding-top: 30px;
+        }
+
+        .container {
+            max-width: 400px; 
+            margin-top: 30px; 
+        }
+
+        .form-label {
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+            .btn-primary:hover {
+                background-color: #0056b3;
+                border-color: #004085;
+            }
+
+        .card {
+            padding: 15px; 
+            border-radius: 8px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-control {
+            border-radius: 0.25rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h2 class="card-title">Edit Instructor</h2>
+            <form asp-controller="Instructor" asp-action="Edit" method="post">
+                <input type="hidden" value="@instructor.InsId" name="InsId" />
+
+                <div class="form-group mb-3">
+                    <label for="InsName" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="InsName" value="@instructor.InsName" name="InsName" required />
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="Salary" class="form-label">Salary</label>
+                    <input type="number" class="form-control" id="Salary" value="@instructor.Salary" name="Salary" required />
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="DeptId" class="form-label">Department ID</label>
+                    <input type="number" class="form-control" id="DeptId" value="@instructor.DeptId" name="DeptId" required />
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="InsDegree" class="form-label">Degree</label>
+                    <input type="text" class="form-control" id="InsDegree" value="@instructor.InsDegree" name="InsDegree" required />
+                </div>
+
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+</body>
+</html>
